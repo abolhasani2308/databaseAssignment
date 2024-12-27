@@ -14,7 +14,6 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Product> products;
 
-    // Getter and Setter for id
     public Long getId() {
         return id;
     }
@@ -23,7 +22,6 @@ public class Category {
         this.id = id;
     }
 
-    // Getter and Setter for name
     public String getName() {
         return name;
     }

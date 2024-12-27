@@ -9,13 +9,12 @@ public class Orders {
     private Long id;
     private String ordersDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)  // اضافه کردن CascadeType.ALL
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
     private double totalAmount;
 
-    // Getter and Setter for id
     public Long getId() {
         return id;
     }
@@ -24,7 +23,6 @@ public class Orders {
         this.id = id;
     }
 
-    // Getter and Setter for ordersDate
     public String getOrdersDate() {
         return ordersDate;
     }
@@ -33,7 +31,6 @@ public class Orders {
         this.ordersDate = ordersDate;
     }
 
-    // Getter and Setter for customer
     public Customer getCustomer() {
         return customer;
     }
@@ -42,7 +39,6 @@ public class Orders {
         this.customer = customer;
     }
 
-    // Getter and Setter for totalAmount
     public double getTotalAmount() {
         return totalAmount;
     }
