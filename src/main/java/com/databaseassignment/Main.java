@@ -1,9 +1,9 @@
 package com.databaseassignment;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import java.util.List;
 import com.databaseassignment.entities.Category;
 import com.databaseassignment.entities.Product;
 import com.databaseassignment.entities.Customer;
