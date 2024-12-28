@@ -8,6 +8,7 @@ import com.databaseassignment.entities.Category;
 import com.databaseassignment.entities.Product;
 import com.databaseassignment.entities.Customer;
 import com.databaseassignment.entities.Orders;
+import com.databaseassignment.services.CustomerService;
 
 public class Main {
     public static void main(String[] args) {
@@ -58,6 +59,19 @@ public class Main {
             }
 
             session.getTransaction().commit();
+
+            CustomerService customerService = new CustomerService();
+
+            customerService.createCustomer("John Doe", "john@example.com");
+    
+            customerService.getAllCustomers().forEach(customerItem -> 
+                System.out.println(customerItem .getName() + " - " + customerItem .getEmail()));
+    
+            customerService.updateCustomer(1L, "John Smith", "johnsmith@example.com");
+    
+            customerService.deleteCustomer(1L);
+    
+            customerService.close();
 
         } finally {
             factory.close();
