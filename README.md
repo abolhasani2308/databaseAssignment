@@ -1,6 +1,6 @@
 # Database Assignment Project
 
-Author: Amir Mohammad Abolhasani
+Author: Amir Mohammad Abolhasani<br/>
 Linkedin: https://www.linkedin.com/in/a-abolhasani/
 
 This project demonstrates the usage of Hibernate ORM for managing database operations in a Java application. It includes basic functionality to interact with entities such as `Product`, `Category`, `Customer`, and `Orders`.
@@ -18,12 +18,12 @@ This project demonstrates the usage of Hibernate ORM for managing database opera
 - **Maven** for dependency management
 
 ## Setup and Usage
-1.Clone the Repository:
-git clone https://github.com/abolhasani2308/databaseAssignment.git
-cd databaseAssignment
-2.Build the Project:
-mvn clean install
-mvn clean compile
-3.Run the Application:
-mvn exec:java -Dexec.mainClass="com.databaseassignment.Main"
+1.Clone the Repository:<br/>
+git clone https://github.com/abolhasani2308/databaseAssignment.git<br/>
+cd databaseAssignment<br/>
+2.Build the Project:<br/>
+mvn clean install<br/>
+mvn clean compile<br/>
+3.Run the Application:<br/>
+mvn exec:java -Dexec.mainClass="com.databaseassignment.Main"<br/>
 4.Check Output
