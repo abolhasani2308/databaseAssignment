@@ -1,69 +1,51 @@
 package com.databaseassignment.services;
 
 import com.databaseassignment.entities.Category;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import com.databaseassignment.repositories.CategoryRepository;
 
 import java.util.List;
 
 public class CategoryService {
-    private SessionFactory sessionFactory;
+    private CategoryRepository categoryRepository;
 
     public CategoryService() {
-        sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        this.categoryRepository = new CategoryRepository();
     }
 
     public void createCategory(String name) {
-        try (Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            Category category = new Category();
-            category.setName(name);
-            session.save(category);
-            session.getTransaction().commit();
-        }
+        Category category = new Category();
+        category.setName(name);
+        categoryRepository.save(category);
     }
 
     public List<Category> getAllCategories() {
-        try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("from Category", Category.class).list();
-        }
+        return categoryRepository.findAll("from Category", Category.class);
     }
 
     public Category getCategoryById(Long id) {
-        try (Session session = sessionFactory.openSession()) {
-            return session.get(Category.class, id);
-        }
+        return categoryRepository.findById(Category.class, id);
     }
 
     public void updateCategory(Long id, String name) {
-        try (Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            Category category = session.get(Category.class, id);
-            if (category != null) {
-                category.setName(name);
-                session.update(category);
-                session.getTransaction().commit();
-            } else {
-                System.out.println("Category not found!");
-            }
+        Category category = categoryRepository.findById(Category.class, id);
+        if (category != null) {
+            category.setName(name);
+            categoryRepository.update(category);
+        } else {
+            System.out.println("Category not found!");
         }
     }
 
     public void deleteCategory(Long id) {
-        try (Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            Category category = session.get(Category.class, id);
-            if (category != null) {
-                session.delete(category);
-                session.getTransaction().commit();
-            } else {
-                System.out.println("Category not found!");
-            }
+        Category category = categoryRepository.findById(Category.class, id);
+        if (category != null) {
+            categoryRepository.delete(category);
+        } else {
+            System.out.println("Category not found!");
         }
     }
 
     public void close() {
-        sessionFactory.close();
+        categoryRepository.close();
     }
 }
