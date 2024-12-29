@@ -16,7 +16,6 @@ public class CustomerService {
         sessionFactory = configuration.buildSessionFactory();
     }
 
-    // Create a new Customer
     public void createCustomer(String name, String email) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -37,7 +36,6 @@ public class CustomerService {
         }
     }
 
-    // Read all Customers
     public List<Customer> getAllCustomers() {
         Session session = sessionFactory.openSession();
 
@@ -48,7 +46,6 @@ public class CustomerService {
         }
     }
 
-    // Update a Customer
     public void updateCustomer(Long id, String name, String email) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -73,7 +70,6 @@ public class CustomerService {
         }
     }
 
-    // Delete a Customer
     public void deleteCustomer(Long id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();

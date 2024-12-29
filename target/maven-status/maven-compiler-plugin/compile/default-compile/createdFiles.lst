@@ -1,6 +1,9 @@
+com\databaseassignment\services\CategoryService.class
 com\databaseassignment\Main.class
 com\databaseassignment\entities\Customer.class
 com\databaseassignment\services\CustomerService.class
+com\databaseassignment\services\ProductService.class
 com\databaseassignment\entities\Category.class
 com\databaseassignment\entities\Product.class
+com\databaseassignment\services\OrdersService.class
 com\databaseassignment\entities\Orders.class

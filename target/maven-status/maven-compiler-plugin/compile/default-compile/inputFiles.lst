@@ -1,6 +1,9 @@
 C:\Local\databaseAssignment\src\main\java\com\databaseassignment\services\CustomerService.java
 C:\Local\databaseAssignment\src\main\java\com\databaseassignment\entities\Category.java
+C:\Local\databaseAssignment\src\main\java\com\databaseassignment\services\ProductService.java
 C:\Local\databaseAssignment\src\main\java\com\databaseassignment\entities\Product.java
 C:\Local\databaseAssignment\src\main\java\com\databaseassignment\entities\Customer.java
 C:\Local\databaseAssignment\src\main\java\com\databaseassignment\Main.java
+C:\Local\databaseAssignment\src\main\java\com\databaseassignment\services\OrdersService.java
 C:\Local\databaseAssignment\src\main\java\com\databaseassignment\entities\Orders.java
+C:\Local\databaseAssignment\src\main\java\com\databaseassignment\services\CategoryService.java
